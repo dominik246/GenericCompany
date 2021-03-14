@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-GenericCompany.WebApi-DBB1549E-E4FD-415C-83BC-5478B360A1F6</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.8.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericCompany.Model.Common\GenericCompany.Model.Common.csproj" />
+    <ProjectReference Include="..\GenericCompany.Model\GenericCompany.Model.csproj" />
+    <ProjectReference Include="..\GenericCompany.Repository\GenericCompany.Repository.csproj" />
+    <ProjectReference Include="..\GenericCompany.Service\GenericCompany.Service.csproj" />
+  </ItemGroup>
+
+</Project>

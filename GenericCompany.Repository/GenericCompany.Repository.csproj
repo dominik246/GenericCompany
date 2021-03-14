@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.1.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenericCompany.DAL\GenericCompany.DAL.csproj" />
+    <ProjectReference Include="..\GenericCompany.Model.Common\GenericCompany.Model.Common.csproj" />
+    <ProjectReference Include="..\GenericCompany.Repository.Common\GenericCompany.Repository.Common.csproj" />
+  </ItemGroup>
+
+</Project>
