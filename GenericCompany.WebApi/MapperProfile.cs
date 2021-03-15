@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 
 using GenericCompany.Model.Common.Models;
+using GenericCompany.WebApi.RESTModels.TransactionModel;
 using GenericCompany.WebApi.RESTModels.UserModel;
+using GenericCompany.WebApi.RESTModels.UserTransactionModel;
 
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,8 @@ namespace GenericCompany.WebApi
         public MapperProfile()
         {
             CreateMap<IUserPoco, UserModel>().ReverseMap();
+            CreateMap<ITransactionPoco, TransactionModel>().ReverseMap();
+            CreateMap<IUserTransactionPoco, UserTransactionModel>().ReverseMap();
         }
     }
 }

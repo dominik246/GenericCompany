@@ -1,5 +1,5 @@
 ﻿using GenericCompany.Common.BaseClasses.BaseServiceModels;
-using GenericCompany.Common.Filters.UserFilter;
+using GenericCompany.Common.BaseClasses.FilterModels;
 using GenericCompany.Common.UrlFields;
 using GenericCompany.Model.Common.Models;
 
@@ -9,12 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using static GenericCompany.Common.Enums.TaskStatus;
-
 namespace GenericCompany.Service.Common.Services
 {
-    public interface IUserService : IBaseServiceReadModel<IUserPoco, IUserFilter, IUrlFields>,
-                                    IBaseServiceWriteModel<IUserPoco, IUserFilter>
+    public interface ITransactionService : IBaseServiceReadModel<ITransactionPoco, IBaseFilterModel, IUrlFields>,
+        IBaseServiceWriteModel<ITransactionPoco, IBaseFilterModel>
     {
     }
 }

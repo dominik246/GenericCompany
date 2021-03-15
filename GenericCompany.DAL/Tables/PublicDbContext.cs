@@ -20,6 +20,8 @@ namespace GenericCompany.DAL.Tables
         }
 
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<TransactionEntity> Transaction { get; set; }
+        public DbSet<UserTransactionEntity> UserTransaction { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(_connectionString);
@@ -31,6 +33,22 @@ namespace GenericCompany.DAL.Tables
                 .HasDefaultValueSql("now()");
 
             modelBuilder.Entity<UserEntity>()
+                .Property(p => p.DateUpdated)
+                .HasDefaultValueSql("now()");
+
+            modelBuilder.Entity<TransactionEntity>()
+                .Property(p => p.DateCreated)
+                .HasDefaultValueSql("now()");
+
+            modelBuilder.Entity<TransactionEntity>()
+                .Property(p => p.DateUpdated)
+                .HasDefaultValueSql("now()");
+
+            modelBuilder.Entity<UserTransactionEntity>()
+                .Property(p => p.DateCreated)
+                .HasDefaultValueSql("now()");
+
+            modelBuilder.Entity<UserTransactionEntity>()
                 .Property(p => p.DateUpdated)
                 .HasDefaultValueSql("now()");
 
