@@ -1,5 +1,6 @@
 ﻿using GenericCompany.Common.BaseClasses.BaseRepositoryModels;
 using GenericCompany.Common.BaseClasses.FilterModels;
+using GenericCompany.Common.Filters.TransactionFilter;
 using GenericCompany.Common.UrlFields;
 using GenericCompany.Model.Common.Models;
 
@@ -11,8 +12,8 @@ using System.Threading.Tasks;
 
 namespace GenericCompany.Repository.Common.Repositories
 {
-    public interface ITransactionRepository : IApplicationReadDbConnection<ITransactionPoco, IBaseFilterModel, IUrlFields>,
-        IApplicationWriteDbConnection<ITransactionPoco, IBaseFilterModel>
+    public interface ITransactionRepository : IApplicationReadDbConnection<ITransactionPoco, ITransactionFilter, IUrlFields>,
+        IApplicationWriteDbConnection<ITransactionPoco, ITransactionFilter>
     {
     }
 }

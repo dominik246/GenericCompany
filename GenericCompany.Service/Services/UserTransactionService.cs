@@ -1,6 +1,7 @@
 ﻿using GenericCompany.Common.BaseClasses.FilterModels;
 using GenericCompany.Common.UrlFields;
 using GenericCompany.Model.Common.Models;
+using GenericCompany.Repository.Common.Repositories;
 using GenericCompany.Service.Common.Services;
 
 using System;
@@ -13,34 +14,39 @@ namespace GenericCompany.Service.Services
 {
     public class UserTransactionService : IUserTransactionService
     {
-        public Task<int> CreateAsync(IEnumerable<IUserTransactionPoco> modelList)
+        private readonly IUserTransactionRepository _repo;
+        public UserTransactionService(IUserTransactionRepository repo)
         {
-            throw new NotImplementedException();
+            _repo = repo;
+        }
+        public async Task<int> CreateAsync(IEnumerable<IUserTransactionPoco> modelList)
+        {
+            return await _repo.CreateAsync(modelList);
         }
 
-        public Task<int> DeleteRangeAsync(IEnumerable<IUserTransactionPoco> modelList)
+        public async Task<int> DeleteRangeAsync(IEnumerable<IUserTransactionPoco> modelList)
         {
-            throw new NotImplementedException();
+            return await _repo.DeleteRangeAsync(modelList);
         }
 
-        public Task<IEnumerable<IUserTransactionPoco>> FindAsync(IBaseFilterModel filter, IUrlFields fields)
+        public async Task<IEnumerable<IUserTransactionPoco>> FindAsync(IBaseFilterModel filter, IUrlFields fields)
         {
-            throw new NotImplementedException();
+            return await _repo.FindAsync(filter, fields);
         }
 
-        public Task<IUserTransactionPoco> GetAsync(IBaseFilterModel filter, IUrlFields fields)
+        public async Task<IUserTransactionPoco> GetAsync(IBaseFilterModel filter, IUrlFields fields)
         {
-            throw new NotImplementedException();
+            return await _repo.GetAsync(filter, fields);
         }
 
-        public Task<int> GetDbCountAsync(IBaseFilterModel filter = null)
+        public async Task<int> GetDbCountAsync(IBaseFilterModel filter = null)
         {
-            throw new NotImplementedException();
+            return await _repo.GetDbCountAsync(filter);
         }
 
-        public Task<int> UpdateRangeAsync(IList<IUserTransactionPoco> modelList)
+        public async Task<int> UpdateRangeAsync(IList<IUserTransactionPoco> modelList)
         {
-            throw new NotImplementedException();
+            return await _repo.UpdateRangeAsync(modelList);
         }
     }
 }

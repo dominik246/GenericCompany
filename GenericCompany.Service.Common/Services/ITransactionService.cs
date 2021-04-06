@@ -1,5 +1,6 @@
 ﻿using GenericCompany.Common.BaseClasses.BaseServiceModels;
 using GenericCompany.Common.BaseClasses.FilterModels;
+using GenericCompany.Common.Filters.TransactionFilter;
 using GenericCompany.Common.UrlFields;
 using GenericCompany.Model.Common.Models;
 
@@ -11,8 +12,8 @@ using System.Threading.Tasks;
 
 namespace GenericCompany.Service.Common.Services
 {
-    public interface ITransactionService : IBaseServiceReadModel<ITransactionPoco, IBaseFilterModel, IUrlFields>,
-        IBaseServiceWriteModel<ITransactionPoco, IBaseFilterModel>
+    public interface ITransactionService : IBaseServiceReadModel<ITransactionPoco, ITransactionFilter, IUrlFields>,
+        IBaseServiceWriteModel<ITransactionPoco, ITransactionFilter>
     {
     }
 }

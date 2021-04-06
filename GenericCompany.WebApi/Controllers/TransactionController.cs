@@ -6,18 +6,18 @@ using GenericCompany.Model.Common.Models;
 using GenericCompany.Service.Common.Services;
 using GenericCompany.WebApi.RESTModels.TransactionModel;
 
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GenericCompany.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TransactionController : ControllerBase
     {
         private readonly ITransactionService _transactionService;
@@ -31,7 +31,7 @@ namespace GenericCompany.WebApi.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public async Task<OkObjectResult> Find([FromQuery] BaseFilterModel filter, [FromBody] UrlFields fields)
+        public async Task<OkObjectResult> Find([FromQuery] BaseFilterModel filter, [FromQuery] UrlFields fields)
         {
             var result = await _transactionService.FindAsync(filter, fields);
             return Ok(Mapper.Map<IEnumerable<TransactionModel>>(result));
