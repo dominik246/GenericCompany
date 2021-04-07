@@ -18,7 +18,9 @@ namespace GenericCompany.Service
         {
             services
                 .AddRepositories()
-                .AddScoped<IUserService, UserService>();
+                .AddScoped<IUserService, UserService>()
+                .AddScoped<ITransactionService, TransactionService>()
+                .AddScoped<IUserTransactionService, UserTransactionService>();
 
             return services;
         }

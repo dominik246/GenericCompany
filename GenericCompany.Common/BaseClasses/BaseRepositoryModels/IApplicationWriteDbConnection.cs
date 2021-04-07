@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace GenericCompany.Common.BaseClasses.BaseRepositoryModels
 {
-    public interface IApplicationWriteDbConnection<T, U, V>
+    public interface IApplicationWriteDbConnection<T, U>
         where T : IBasePocoModel
-        where U : IConvertible
-        where V : IBaseFilterModel
+        where U : IBaseFilterModel
     {
         Task<int> CreateAsync(IEnumerable<T> modelList);
         Task<int> DeleteRangeAsync(IEnumerable<T> modelList);

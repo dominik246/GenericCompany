@@ -1,6 +1,7 @@
 ﻿using GenericCompany.Common.BaseClasses.FilterModels;
 using GenericCompany.Common.BaseClasses.PocoModels;
 using GenericCompany.Common.BaseClasses.RESTModels;
+using GenericCompany.Common.Filters.TransactionFilter;
 using GenericCompany.Common.Filters.UserFilter;
 using GenericCompany.Common.UrlFields;
 
@@ -24,6 +25,7 @@ namespace GenericCompany.Common
                 .AddScoped<IBaseRESTModel, BaseRESTModel>()
 
                 .AddScoped<IUserFilter, UserFilter>()
+                .AddScoped<ITransactionFilter, TransactionFilter>()
 
                 .AddScoped<IUrlFields, UrlFields.UrlFields>();
 

@@ -16,6 +16,8 @@ namespace GenericCompany.Repository
         public MapperProfile()
         {
             CreateMap<UserEntity, IUserPoco>().ReverseMap();
+            CreateMap<TransactionEntity, ITransactionPoco>().ReverseMap();
+            CreateMap<UserTransactionEntity, IUserTransactionPoco>().ReverseMap();
         }
     }
 }

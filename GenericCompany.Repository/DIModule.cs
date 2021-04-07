@@ -18,7 +18,9 @@ namespace GenericCompany.Repository
         {
             services
                 .AddDAL()
-                .AddScoped<IUserRepository, UserRepository>();
+                .AddScoped<IUserRepository, UserRepository>()
+                .AddScoped<ITransactionRepository, TransactionRepository>()
+                .AddScoped<IUserTransactionRepository, UserTransactionRepository>();
 
             return services;
         }

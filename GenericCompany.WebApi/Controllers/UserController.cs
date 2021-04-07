@@ -6,6 +6,7 @@ using GenericCompany.Model.Common.Models;
 using GenericCompany.Service.Common.Services;
 using GenericCompany.WebApi.RESTModels.UserModel;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using System;
@@ -30,7 +31,7 @@ namespace GenericCompany.WebApi.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public async Task<OkObjectResult> Find([FromQuery] UserFilter filter, [FromBody] UrlFields fields)
+        public async Task<OkObjectResult> Find([FromQuery] UrlFields fields, [FromQuery] UserFilter filter)
         {
             var result = await _userService.FindAsync(filter, fields);
             return Ok(Mapper.Map<IEnumerable<UserModel>>(result));

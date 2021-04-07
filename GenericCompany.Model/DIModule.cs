@@ -19,7 +19,9 @@ namespace GenericCompany.Model
             services
                 .AddCommons()
 
-                .AddScoped<IUserPoco, UserPoco>();
+                .AddScoped<IUserPoco, UserPoco>()
+                .AddScoped<ITransactionPoco, TransactionPoco>()
+                .AddScoped<IUserTransactionPoco, UserTransactionPoco>();
 
             return services;
         }
